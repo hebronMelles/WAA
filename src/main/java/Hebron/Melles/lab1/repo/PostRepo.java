@@ -1,10 +1,11 @@
 package Hebron.Melles.lab1.repo;
 
 import Hebron.Melles.lab1.domain.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PostRepo {
+public interface PostRepo  {
     List<Post> getAllPost();
     Post getPostById(int id);
     String createNewPost();
