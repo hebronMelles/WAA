@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
+
 public class PostRepoImpl implements PostRepo{
     private static List<Post> posts;
 
