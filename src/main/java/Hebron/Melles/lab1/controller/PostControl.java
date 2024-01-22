@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/lab1")
+@RequestMapping("/api/lab1/posts")
 public class PostControl {
  private PostService service;
- private UserService user;
 
- public PostControl(PostService postService, UserService userService) {
+
+ public PostControl(PostService postService) {
   this.service = postService;
-  this.user = userService;
  }
 
- @GetMapping("/posts")
+ @GetMapping()
  List<Post> getAllPost() {
   return service.getAllPost();
  }
@@ -50,17 +49,5 @@ public class PostControl {
   service.deleteById(id);
  }
 
- @GetMapping("/users")
- public List<UserDto> getAllUsers(){
-  return user.getAllUsers();
- }
- @GetMapping("/user/{id}")
- public UserDto getUserById(@PathVariable int id){
-  return user.getUserById(id);
- }
 
- @GetMapping("user/{id}/posts")
- public User getUserAndPost(@PathVariable int id) {
-  return user.getUserAndPost(id);
- }
 }

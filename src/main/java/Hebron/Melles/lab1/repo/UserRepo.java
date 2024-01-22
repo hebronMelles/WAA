@@ -10,5 +10,8 @@ public interface UserRepo {
     UserDto getUserById(int id);
     String createNewUser();
     User getUserAndPost(int id);
+    UserDto deleteUserById(int id);
+    User getUsersByNumberOfPosts(int n);
+
 
 }

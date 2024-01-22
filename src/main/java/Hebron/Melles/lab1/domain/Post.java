@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.util.List;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -18,7 +20,9 @@ public class Post {
     String title;
     String content;
     String author;
-
+    @OneToMany
+            @JoinColumn
+    List<Comment> comments;
 }
 
 

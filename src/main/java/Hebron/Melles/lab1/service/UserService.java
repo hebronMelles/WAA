@@ -10,4 +10,7 @@ public interface UserService {
     UserDto getUserById(int id);
     String createNewUser();
     public User getUserAndPost(int id);
+    UserDto deleteUserById(int id);
+
+    User getUsersByNumberOfPosts(int n);
 }
